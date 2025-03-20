@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
 		"type": "git",
-		"url": "https://github.com/martin-amaro/vscode-scriptal-runner.git"
+		"url": "https://github.com/martin-amaro/vscode-scriptal-runner"
 	},
   "bugs": {
-		"url": "https://github.com/martin-amaro/vscode-scriptal.git"
+		"url": "https://github.com/martin-amaro/vscode-scriptal-runner/issues"
 	},
   "engines": {
     "vscode": "^1.98.0"
