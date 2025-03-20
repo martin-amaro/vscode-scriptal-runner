@@ -1,0 +1,103 @@
+{
+  "name": "scriptal-runner",
+  "displayName": "Scriptal Runner",
+  "description": "",
+  "version": "0.0.1",
+  "publisher": "MartinAmaro",
+  "author": {
+		"name": "Martin Amaro",
+		"email": "martingadpacks@gmail.com"
+	},
+  "keywords": [
+    "scriptal",
+    "scriptal runner",
+    "scriptal run",
+    "scriptal debug"
+  ],
+  "license": "MIT",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/martin-amaro/vscode-scriptal-runner.git"
+	},
+  "bugs": {
+		"url": "https://github.com/martin-amaro/vscode-scriptal.git"
+	},
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onDebug",
+    "onCommand:workbench.action.debug.start",
+    "onStartupFinished"
+
+  ],
+	"icon": "images/scriptal.png",
+  "main": "./out/extension.js",
+  "contributes": {
+    "debuggers": [
+      {
+        "type": "scriptal",
+        "label": "Scriptal Runner",
+        "program": "./out/runner.js",
+        "runtime": "executable",
+        "languages": [
+          "scriptal"
+        ],
+        
+        "variables": {
+          "AskForProgramName": "extension.scriptal-runner.getProgramName"
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.scriptal-runner.run",
+        "title": "Run Scriptal File",
+        "icon": "$(play)"
+      }
+    ],
+    "menus": {
+      "editor/title/run": [
+        {
+					"when": "!inOutput && !isDebugging",
+					"command": "extension.scriptal-runner.run",
+					"group": "navigation"
+				}
+      ]
+    },
+    "configuration": [
+      {
+        "title": "Scriptal Runner",
+        "properties": {
+          "scriptal-runner.path": {
+            "type": "string",
+            "default": "scriptal",
+            "description": "Specifies the full path to the Scriptal executable. If 'scriptal' is set, it assumes the executable is in the system's PATH."
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
