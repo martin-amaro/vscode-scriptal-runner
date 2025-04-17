@@ -1,11 +1,12 @@
-## Scriptal Runner for Visual Studio Code
+# Scriptal Runner for Visual Studio Code
 
 Scriptal Runner is a Visual Studio Code extension for [Scriptal programming language](https://github.com/martin-amaro/Scriptal) that allows you to execute Scriptal code directly within the editor. Run your .stal scripts seamlessly without leaving VS Code.
 
 ![Scriptal extension overview](images/overview.gif)
 
 ## Requirements
-- [Scriptal 1.0](https://www.github.com/martin-amaro/Scriptal/releases/latest) (Windows Only)
+
+- [Scriptal](https://www.github.com/martin-amaro/Scriptal/releases/latest) (Windows Only)
 
 ## Installation
 

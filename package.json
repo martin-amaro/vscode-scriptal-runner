@@ -2,7 +2,7 @@
   "name": "scriptal-runner",
   "displayName": "Scriptal Runner",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "MartinAmaro",
   "author": {
 		"name": "Martin Amaro",
@@ -34,7 +34,7 @@
     "onStartupFinished"
 
   ],
-	"icon": "images/scriptal.png",
+	"icon": "images/icon.png",
   "main": "./out/extension.js",
   "contributes": {
     "debuggers": [
@@ -62,7 +62,7 @@
     "menus": {
       "editor/title/run": [
         {
-					"when": "!inOutput && !isDebugging",
+					"when": "editorLangId == scriptal && !inOutput && !isDebugging",
 					"command": "extension.scriptal-runner.run",
 					"group": "navigation"
 				}
